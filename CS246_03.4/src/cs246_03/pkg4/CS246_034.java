@@ -10,12 +10,13 @@ import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
  *
- * @author Brad
+ * @author Brad, Brandon
  */
 public class CS246_034 {
 
@@ -24,14 +25,19 @@ public class CS246_034 {
      */
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
         // TODO code application logic here
-        System.out.println("Starting");
         
         CS246_034 main = new CS246_034();
         main.loadFile("conference.xml");
         
-        System.out.println("Done");
     }
     
+    /**
+     * 
+     * @param filename
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException 
+     */
     private void loadFile(String filename) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -39,6 +45,13 @@ public class CS246_034 {
         Document doc = builder.parse("conference.xml");
         
         NodeList sessions = doc.getElementsByTagName("speaker");
+        
+        for (int i = 0; i < sessions.getLength(); i++) {
+            Element speaker = (Element) sessions.item(i);
+            String speakerName = speaker.getAttribute("name");
+            System.out.println(speakerName);
+            
+        }
     }
     
 }
