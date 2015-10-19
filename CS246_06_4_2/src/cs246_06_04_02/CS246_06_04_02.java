@@ -23,6 +23,20 @@ public class CS246_06_04_02 {
         
         evenThread.start();
         oddThread.start();
+        
+        try {
+            evenThread.join();
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+        
+        try {
+            oddThread.join();
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        } 
+        
+        System.out.println("All finished");
     }
     
 }
