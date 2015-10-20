@@ -15,8 +15,11 @@ public class CS246_06_04_02 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // Create a 0 to 100 by 2 counter
         Counter evenJob = new Counter(0, 100, 2);
+        // Create a 1 to 100 by 1 counter
         Counter oddJob = new Counter(1, 100, 2);
+        // Create a display running job
         ShowRunning runningJob = new ShowRunning();
         
         Thread evenThread = new Thread(evenJob);
