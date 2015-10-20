@@ -6,7 +6,7 @@
 package cs246_06_04_02;
 
 /**
- *
+ * Counting thread
  * @author bradb
  */
 public class CountByEvens implements Runnable {

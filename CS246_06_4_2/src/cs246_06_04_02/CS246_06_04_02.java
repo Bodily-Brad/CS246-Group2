@@ -15,8 +15,8 @@ public class CS246_06_04_02 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CountByEvens evenJob = new CountByEvens();
-        CountByOdds oddJob = new CountByOdds();
+        Counter evenJob = new Counter(0, 100, 2);
+        Counter oddJob = new Counter(1, 100, 2);
         ShowRunning runningJob = new ShowRunning();
         
         Thread evenThread = new Thread(evenJob);
