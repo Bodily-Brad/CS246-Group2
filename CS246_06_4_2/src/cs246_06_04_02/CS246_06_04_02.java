@@ -17,10 +17,13 @@ public class CS246_06_04_02 {
     public static void main(String[] args) {
         CountByEvens evenJob = new CountByEvens();
         CountByOdds oddJob = new CountByOdds();
+        ShowRunning runningJob = new ShowRunning();
         
         Thread evenThread = new Thread(evenJob);
         Thread oddThread = new Thread(oddJob);
+        Thread runningThread = new Thread(runningJob);
         
+        runningThread.start();
         evenThread.start();
         oddThread.start();
         
@@ -36,6 +39,7 @@ public class CS246_06_04_02 {
             ex.printStackTrace();
         } 
         
+        runningJob.Stop();
         System.out.println("All finished");
     }
     
