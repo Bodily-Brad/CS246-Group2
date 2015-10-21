@@ -6,8 +6,8 @@
 package cs246_06_04_02;
 
 /**
- *
- * @author bradb
+ * Shows "running..." no more than once per second
+ * @author Brad Bodily and Brandon Hartshorn
  */
 public class ShowRunning implements Runnable {
     private boolean shouldRun = true;
@@ -23,6 +23,9 @@ public class ShowRunning implements Runnable {
         }
     }
     
+    /**
+     * Instructs the job to stop
+     */
     public void Stop() {
         shouldRun = false;
     }

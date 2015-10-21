@@ -7,7 +7,7 @@ package cs246_06_04_02;
 
 /**
  *
- * @author bradb
+ * @author Brad Bodily, Brandon Hartshorn
  */
 public class CS246_06_04_02 {
 
@@ -22,27 +22,34 @@ public class CS246_06_04_02 {
         // Create a display running job
         ShowRunning runningJob = new ShowRunning();
         
+        // Create threads
         Thread evenThread = new Thread(evenJob);
         Thread oddThread = new Thread(oddJob);
         Thread runningThread = new Thread(runningJob);
         
+        // Start threads
         runningThread.start();
         evenThread.start();
         oddThread.start();
         
+        // Wait for even job to finish
         try {
             evenThread.join();
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
         
+        // Wait for odd job to finish
         try {
             oddThread.join();
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         } 
         
+        // Instruct the running job to stop
         runningJob.Stop();
+        
+        // Display our message, per the instructions
         System.out.println("All finished");
     }
     
