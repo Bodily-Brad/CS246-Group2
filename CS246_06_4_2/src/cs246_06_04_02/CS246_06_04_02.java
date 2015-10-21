@@ -6,7 +6,7 @@
 package cs246_06_04_02;
 
 /**
- *
+ * Team activity 06.4.2
  * @author Brad Bodily, Brandon Hartshorn
  */
 public class CS246_06_04_02 {
